@@ -259,25 +259,89 @@
             flex-flow: column wrap;
         }
 
-        .callofduty > a > img{margin: 30px 0 0 20px; }
+        .callofduty>a>img {
+            margin: 30px 0 0 20px;
+        }
 
-        .cot_box {width: 300px; height: 60px;}
+        .cot_box {
+            width: 300px;
+            height: 60px;
+        }
 
-        .cot_box:first-of-type {display: flex; flex-direction: row; justify-content: flex-start; align-items: flex-end; margin: 50px 0 0 0;}
-        .cot_box:first-of-type > h3 {float: left; font-size: 16px; color: #494b4f;}
-        .cot_box:first-of-type > img {width: 80px; height: 25px; margin: 0 0 12px 10px;}
+        .cot_box:first-of-type {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-end;
+            margin: 50px 0 0 0;
+        }
 
-        .cot_box:nth-of-type(2) {position: relative;}
-        .cot_box:nth-of-type(2) > img {position: absolute; top: 0px; left: -3px; z-index: 1; }
-        .cot_box:nth-of-type(2) > h2 {position: absolute; top: 0px; left: 10px; z-index: 2; font-size: 18px; color: #fff;}
-        .cot_box:nth-of-type(2) > h2 > span {color: #000;}
+        .cot_box:first-of-type>h3 {
+            float: left;
+            font-size: 16px;
+            color: #494b4f;
+        }
 
-        .cot_box:last-of-type {width: 350px; height: 220px; font-size: 14px; margin: 20px 0 0 0;}
-        .cot_box:last-of-type > p {color: #494b4f;}
-        .cot_box:last-of-type > button {width: 100px; height: 50; background-color: #e4a101; -webkit-transform: skew(-16deg); border: none; padding: 8px; margin: 20px 0 0 15px;}
-        
-        .table_name {font-weight: bold; width: 100px; height: 30px;}
-        .table_section {color: #494b4f;}
+        .cot_box:first-of-type>img {
+            width: 80px;
+            height: 25px;
+            margin: 0 0 12px 10px;
+        }
+
+        .cot_box:nth-of-type(2) {
+            position: relative;
+        }
+
+        .cot_box:nth-of-type(2)>img {
+            position: absolute;
+            top: 0px;
+            left: -3px;
+            z-index: 1;
+        }
+
+        .cot_box:nth-of-type(2)>h2 {
+            position: absolute;
+            top: 0px;
+            left: 10px;
+            z-index: 2;
+            font-size: 18px;
+            color: #fff;
+        }
+
+        .cot_box:nth-of-type(2)>h2>span {
+            color: #000;
+        }
+
+        .cot_box:last-of-type {
+            width: 350px;
+            height: 220px;
+            font-size: 14px;
+            margin: 20px 0 0 0;
+        }
+
+        .cot_box:last-of-type>p {
+            color: #494b4f;
+        }
+
+        .cot_box:last-of-type>button {
+            width: 100px;
+            height: 50;
+            background-color: #e4a101;
+            -webkit-transform: skew(-16deg);
+            border: none;
+            padding: 8px;
+            margin: 20px 0 0 15px;
+        }
+
+        .table_name {
+            font-weight: bold;
+            width: 100px;
+            height: 30px;
+        }
+
+        .table_section {
+            color: #494b4f;
+        }
 
         .duty_box {
             background-color: aqua;
@@ -286,7 +350,10 @@
             margin: 45px 0 0px 0;
         }
 
-        .duty_box > img {width: 100%; height: 100%;}
+        .duty_box>img {
+            width: 100%;
+            height: 100%;
+        }
 
         .for_gamers {
             width: 100%;
@@ -306,6 +373,29 @@
             height: 700px;
             transform: translate(-50%, 0%);
             z-index: 3;
+        }
+
+        .triangle_top {
+            width: 0px;
+            height: 0px;
+            border-bottom: calc(180px * 0.8) solid #F6F6F6;
+            border-left: 180px solid transparent;
+            border-right: 180px solid transparent;
+            transform: rotate(180deg);
+            position: absolute;
+            top: 0;
+            left: 34%;
+        }
+
+        .triangle_bottom {
+            width: 0px;
+            height: 0px;
+            border-bottom: calc(180px * 0.8) solid #F6F6F6;
+            border-left: 180px solid transparent;
+            border-right: 180px solid transparent;
+            position: absolute;
+            bottom: 0;
+            left: 34%;
         }
 
         .for_gamers img[alt="just_gamer_chart"] {
@@ -412,20 +502,22 @@
 
         .just_games {
             width: 1260px;
-            height: 1800px;
+            height: 1600px;
             margin: 0 auto;
-            background-color: yellowgreen;
         }
 
         .just_games>h3 {
             text-align: center;
             font-size: 28px;
-            color: #fff;
+            color: #000;
             padding: 100px 0 0 0;
         }
 
+        .just_games > h3 > span {color: #e4a101;}
+
         .just_games>p {
             text-align: center;
+            color: #494b4f;
         }
 
         .just_games>img {
@@ -433,6 +525,10 @@
             height: 11px;
             margin: 0 0 0 500px;
         }
+
+        .games_imgs {width: 1260px; height: 1300px; margin: 50px 0 0 0; display: flex; flex-flow: row wrap; justify-content: space-between;}
+
+        .thumb_img > a > img {box-shadow: 3px 3px 3px #d4d4d4;}
 
 
         .worlds_meet {
@@ -852,7 +948,6 @@
         .follow {
             width: 330px;
             height: 165px;
-            background-color: steelblue;
             display: inline;
             float: left;
         }
@@ -868,20 +963,18 @@
             width: 300px;
             height: 100px;
             display: inline-flex;
-            background-color: violet;
             justify-content: flex-start;
         }
 
         #sns_icon>a>img {
             width: 30px;
             height: 30px;
-            margin: 5px;
+            margin: 20px 0px 0 20px;
         }
 
         .newsletter {
             width: 330px;
             height: 165px;
-            background-color: slateblue;
             display: inline;
             float: left;
         }
@@ -892,6 +985,14 @@
             margin: 10px 20px;
             border-bottom: 3px solid #e4a101;
         }
+
+        .newsletter > table {margin: 20px 0 0 20px;}
+
+        input[type="email"] {width: 180px; height: 34px; background-color: #1E1B20; color:#fff; border:none;}
+
+        img[alt="rocket"] {width: 36px; height: 32px; background-color: #e4a101; padding: 8px;}
+
+
     </style>
 </head>
 
@@ -1015,6 +1116,8 @@
             <img src="img/just_gamer_bg.jpg" alt="just_gamer_bg">
 
             <div id="tech">
+                <div class="triangle_top"></div>
+                <div class="triangle_bottom"></div>
                 <img src="img/just_gamers_img.png" alt="just_gamer_img">
                 <img src="img/just_gamers_chart.png" alt="just_gamer_chart">
                 <img src="img/gamers_circle_line.png" alt="just_gamer_circle">
@@ -1075,12 +1178,14 @@
                 strategic</p>
             <img src="img/title_bar02.png" alt="title_bar2">
 
-            <div><img src="" alt=""></div>
-            <div><img src="" alt=""></div>
-            <div><img src="" alt=""></div>
-            <div><img src="" alt=""></div>
-            <div><img src="" alt=""></div>
-            <div><img src="" alt=""></div>
+            <div class="games_imgs">
+                <div class="thumb_img"><a href="#"><img src="img/featured_game_thumb01.jpg" alt="thumb1"></a></div>
+                <div class="thumb_img"><a href="#"><img src="img/featured_game_thumb02.jpg" alt="thumb2"></a></div>
+                <div class="thumb_img"><a href="#"><img src="img/featured_game_thumb03.jpg" alt="thumb3"></a></div>
+                <div class="thumb_img"><a href="#"><img src="img/featured_game_thumb04.jpg" alt="thumb4"></a></div>
+                <div class="thumb_img"><a href="#"><img src="img/featured_game_thumb05.jpg" alt="thumb5"></a></div>
+                <div class="thumb_img"><a href="#"><img src="img/featured_game_thumb06.jpg" alt="thumb6"></a></div>
+            </div>
 
         </div>
 
@@ -1293,17 +1398,21 @@
                 <h2>Follow us</h2>
 
                 <div id="sns_icon">
-                    <a href="#"><img src="img/facebook.png" alt="facebook"></a>
-                    <a href="#"><img src="img/twitter-logo-2429.png" alt="twitter"></a>
-                    <a href="#"><img src="img/instagram.icon.webp" alt="instagram"></a>
-                    <a href="#"><img src="img/pinterest.png" alt="pinterest"></a>
+                    <a href="#"><img src="img/icon_facebook.png" alt="facebook"></a>
+                    <a href="#"><img src="img/icon_twitter.png" alt="twitter"></a>
+                    <a href="#"><img src="img/icon_pinterest.png" alt="pinterest"></a>
                 </div>
             </div>
 
             <div class="newsletter">
                 <h2>Newsletter Sign Up</h2>
-                <label for="mail">메일 주소</label>
-                <input type="email" id="mail">
+                    <table>
+                        <tr>
+                            <td><input type="email" name="email" placeholder="Enter your email"></td>
+                            <td><a href="#"><img src="img/icon_rocket.png" alt="rocket"></a></td>
+                        </tr>
+                    </table>
+
             </div>
 
         </div>
