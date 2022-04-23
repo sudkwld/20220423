@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geco-eSports Gaming React js</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: "Helvetica Neue", Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        ul,
+        li,
+        ol {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        .preview_header {
+            width: 100%;
+            height: 800px;
+            position: relative;
+        }
+
+        .preview_header>img[alt="slider_bg"] {
+            width: 100%;
+            height: 800px;
+        }
+
+        .preview_header>img[alt="circle"] {
+            position: absolute;
+            top: 12%;
+            left: 40%;
+            width: 700px;
+            height: 700px;
+            opacity: 0.1;
+        }
+
+        .preview_header>img[alt="slider_w"] {
+            position: absolute;
+            top: 16%;
+            right: 400px;
+            width: 540px;
+            height: 640px;
+        }
+
+        .preview_header>img[alt="slider_m"] {
+            position: absolute;
+            top: 140px;
+            right: 200px;
+            width: 440px;
+            height: 656px;
+        }
+
+        header {
+            width: 1400px;
+            height: 700px;
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            transform: translate(-50%, 0%);
+        }
+
+        header>img {
+            width: 1400px;
+            height: 100px;
+        }
+
+        .logo {
+            width: 130px;
+            height: 40px;
+            position: absolute;
+            top: 30px;
+            left: 30px;
+        }
+
+        .nav {
+            width: 700px;
+            height: 50px;
+            position: absolute;
+            top: 30px;
+            right: 200px;
+        }
+
+        .navbox {
+            width: 90px;
+            height: 40px;
+            background-color: #1c1421;
+            display: inline-flex;
+            -webkit-transform: skew(-10deg);
+            font-size: 13px;
+        }
+
+        li {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navbox:hover {
+            background-color: #e4a101;
+
+            transition: all 0.5s ease;
+        }
+
+        .navbox>a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: lighter;
+            -webkit-transform: skew(10deg);
+        }
+
+        .navbox>a:hover {
+            color: #1c1421;
+            transition: all 0.5s ease;
+        }
+
+        .icon_box {
+            width: 200px;
+            height: 50px;
+            position: absolute;
+            top: 30px;
+            right: 0;
+        }
+
+        .icon_box>a>img[alt="cart"] {
+            display: inline;
+            width: 30px;
+            height: 30px;
+            float: left;
+            margin: 10px 0 0 10px;
+        }
+
+        .icon_box>a>img[alt="magnifying_glass"] {
+            display: inline;
+            width: 40px;
+            height: 40px;
+            float: right;
+            margin: 5px 70px 0 0;
+            background-color: #000;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        .worldgaming {
+            width: 550px;
+            height: 340px;
+            float: left;
+            margin: 120px 0 0 40px;
+            position: relative;
+        }
+
+        .worldgaming>h3 {
+            font-size: 23px;
+            font-weight: bolder;
+            color: #e4a101;
+            position: absolute;
+            top: 10px;
+            left: 0;
+        }
+
+        .worldgaming>h5 {
+            font-size: 65px;
+            color: #fff;
+            font-weight: bolder;
+            position: absolute;
+            top: -50px;
+            left: 0;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .worldgaming>h5>span {
+            color: #e4a101;
+        }
+
+        .worldgaming>p {
+            font-size: 13px;
+            color: #fff;
+            position: absolute;
+            top: 215px;
+            left: 0;
+        }
+
+        .worldgaming>button {
+            width: 150px;
+            height: 50px;
+            background-color: #e4a101;
+            border: none;
+            position: absolute;
+            bottom: 0px;
+            left: 30px;
+            -webkit-transform: skew(-10deg);
+        }
+
+        .worldgaming>button>a {
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bolder;
+            color: #000;
+            -webkit-transform: skew(10deg);
+        }
+
+        section {
+            width: 100%;
+            height: 5000px;
+            background-color: #F6F6F6;
+        }
+
+        .released_games {
+            width: 1260px;
+            height: 800px;
+            margin: 0 auto;
+            background-color: #F6F6F6;
+        }
+
+        .released_games>h3 {
+            text-align: center;
+            font-size: 28px;
+            color: #000;
+            margin: 100px 0 0 0;
+        }
+
+        .released_games>h3>span {
+            color: #e4a101;
+            font-size: 28px;
+        }
+
+        .released_games>p {
+            text-align: center;
+            color: #494b4f;
+        }
+
+        .released_games>img {
+            width: 268px;
+            height: 11px;
+            margin: 0 0 0 500px;
+        }
+
+        .released_box {
+            width: 1200px;
+            height: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-flow: column wrap;
+        }
+
+        .callofduty {
+            width: 720px;
+            height: 460px;
+            margin: 50px 10px;
+            box-shadow: 0 -1px 10px #d4d4d4;
+            display: flex;
+            flex-flow: column wrap;
+        }
+
+        .callofduty > a > img{margin: 30px 0 0 20px; }
+
+        .cot_box {width: 300px; height: 60px;}
+
+        .cot_box:first-of-type {display: flex; flex-direction: row; justify-content: flex-start; align-items: flex-end; margin: 50px 0 0 0;}
+        .cot_box:first-of-type > h3 {float: left; font-size: 16px; color: #494b4f;}
+        .cot_box:first-of-type > img {width: 80px; height: 25px; margin: 0 0 12px 10px;}
+
+        .cot_box:nth-of-type(2) {position: relative;}
+        .cot_box:nth-of-type(2) > img {position: absolute; top: 0px; left: -3px; z-index: 1; }
+        .cot_box:nth-of-type(2) > h2 {position: absolute; top: 0px; left: 10px; z-index: 2; font-size: 18px; color: #fff;}
+        .cot_box:nth-of-type(2) > h2 > span {color: #000;}
+
+        .cot_box:last-of-type {width: 350px; height: 220px; font-size: 14px; margin: 20px 0 0 0;}
+        .cot_box:last-of-type > p {color: #494b4f;}
+        .cot_box:last-of-type > button {width: 100px; height: 50; background-color: #e4a101; -webkit-transform: skew(-16deg); border: none; padding: 8px; margin: 20px 0 0 15px;}
+        
+        .table_name {font-weight: bold; width: 100px; height: 30px;}
+        .table_section {color: #494b4f;}
+
+        .duty_box {
+            background-color: aqua;
+            width: 382px;
+            height: 131px;
+            margin: 45px 0 0px 0;
+        }
+
+        .duty_box > img {width: 100%; height: 100%;}
+
+        .for_gamers {
+            width: 100%;
+            height: 800px;
+            position: relative;
+        }
+
+        .for_gamers img[alt="just_gamer_bg"] {
+            width: 100%;
+            height: 800px;
+        }
+
+        .for_gamers img[alt="just_gamer_img"] {
+            position: absolute;
+            top: 100px;
+            left: 50%;
+            height: 700px;
+            transform: translate(-50%, 0%);
+            z-index: 3;
+        }
+
+        .for_gamers img[alt="just_gamer_chart"] {
+            position: absolute;
+            top: 200px;
+            left: 65%;
+        }
+
+        .for_gamers img[alt="just_gamer_circle"] {
+            position: absolute;
+            top: 450px;
+            left: 650px;
+            z-index: 1;
+        }
+
+        .for_gamers img[alt="just_gamer_shape"] {
+            position: absolute;
+            top: 495px;
+            left: 770px;
+            z-index: 2;
+            opacity: 0.7;
+        }
+
+        #tech {
+            width: 1300px;
+            height: 800px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, 0%);
+        }
+
+        #tech>h3 {
+            font-size: 28px;
+            color: #fff;
+            margin: 130px 0 0 0;
+        }
+
+        #tech>p {
+            font-size: 13px;
+            color: #90949c;
+        }
+
+        .gamer_list {
+            width: 500px;
+            height: 120px;
+            margin: 40px 0;
+            display: flex;
+        }
+
+        .hgamer {
+            width: 360px;
+            height: 120px;
+            margin: 0 0 0 30px;
+        }
+
+        .hgamer>h3 {
+            font-size: 20px;
+            color: #fff;
+        }
+
+        .hgamer>p {
+            font-size: 13px;
+            color: #90949c;
+        }
+
+        .list_box {
+            width: 110px;
+            height: 110px;
+            background-color: #494b4f;
+            position: relative;
+        }
+
+        .list_box:hover {
+            background-color: #e4a101;
+            transition: all 0.5s ease;
+        }
+
+        .list_box img[alt="iconbg"] {
+            width: 97px;
+            height: 97px;
+            position: absolute;
+            top: 5px;
+            left: 5px;
+        }
+
+        .list_box img[alt="gamericon1"] {
+            position: absolute;
+            top: 22px;
+            left: 34px;
+        }
+
+        .list_box img[alt="gamericon2"] {
+            position: absolute;
+            top: 29px;
+            left: 28px;
+        }
+
+        .list_box img[alt="gamericon3"] {
+            position: absolute;
+            top: 25px;
+            left: 34px;
+        }
+
+        .just_games {
+            width: 1260px;
+            height: 1800px;
+            margin: 0 auto;
+            background-color: yellowgreen;
+        }
+
+        .just_games>h3 {
+            text-align: center;
+            font-size: 28px;
+            color: #fff;
+            padding: 100px 0 0 0;
+        }
+
+        .just_games>p {
+            text-align: center;
+        }
+
+        .just_games>img {
+            width: 268px;
+            height: 11px;
+            margin: 0 0 0 500px;
+        }
+
+
+        .worlds_meet {
+            width: 100%;
+            height: 800px;
+            position: relative;
+            background-color: violet;
+        }
+
+        .worlds_meet img[alt="cta_bg"] {
+            width: 100%;
+            height: 800px;
+        }
+
+        .meet_real {
+            width: 1400px;
+            height: 800px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, 0%);
+        }
+
+        .meet_real>img[alt="cta_img"] {
+            position: absolute;
+            top: 13%;
+            left: 110px;
+        }
+
+        .meet_box {
+            width: 520px;
+            height: 400px;
+            position: absolute;
+            top: 25%;
+            right: 150px;
+        }
+
+        .meet_box>img[alt="cta_icon"] {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .meet_box>img[alt="titlebar3"] {
+            position: absolute;
+            bottom: 180px;
+            left: 0;
+        }
+
+        .meet_box>h3 {
+            font-size: 40px;
+            color: #fff;
+            position: absolute;
+            top: 30px;
+            left: 0;
+        }
+
+        .meet_box>h3>span {
+            font-size: 40px;
+            color: #e4a101;
+        }
+
+        .meet_box>p {
+            color: #fff;
+            font-size: 14px;
+            position: absolute;
+            top: 120px;
+            left: 0;
+        }
+
+        .meet_box>button {
+            display: block;
+            width: 190px;
+            height: 50px;
+            background-color: #e4a101;
+            border: none;
+            -webkit-transform: skew(-10deg);
+            position: absolute;
+            bottom: 90px;
+            left: 10px;
+        }
+
+        .meet_box>button>a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bolder;
+            -webkit-transform: skew(10deg);
+            font-size: 13px;
+        }
+
+        .gaming_products {
+            width: 100%;
+            height: 800px;
+            background-color: #1C181E;
+        }
+
+        .products_items {
+            width: 1400px;
+            height: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .products_items>h3 {
+            text-align: center;
+            font-size: 28px;
+            color: #fff;
+            padding: 100px 0 0 0;
+        }
+
+        .products_items>h3>span {
+            font-size: 28px;
+            color: #e4a101;
+        }
+
+        .products_items>p {
+            text-align: center;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .products_items>img {
+            width: 268px;
+            height: 11px;
+            position: absolute;
+            top: 220px;
+            left: 550px;
+        }
+
+        .goods {
+            width: 295px;
+            height: 400px;
+            background-color: #1E1B20;
+            display: inline-block;
+            margin: 100px 10px 0 30px;
+        }
+
+        .goods>button {
+            background-color: #e4a101;
+            border: none;
+            width: 100px;
+            height: 30px;
+            margin: 0 0 10px 100px;
+        }
+
+        .goods>button>a {
+            text-decoration: none;
+            padding: 5px;
+            color: #000;
+        }
+
+        .goods_naming {
+            width: 295px;
+            height: 70px;
+        }
+
+        .goods_naming>h3 {
+            font-size: 14px;
+        }
+
+        .goods_naming>h3>a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .goods_naming>h3>a:hover {
+            color: #e4a101;
+            transition: all 0.3s ease;
+        }
+
+        .price {
+            width: 295px;
+            height: 70px;
+        }
+
+        .price>h4 {
+            float: left;
+            font-size: 14px;
+            color: #e4a101;
+        }
+
+        .price>a>img {
+            float: right;
+            width: 15px;
+            height: 15px;
+            margin: 15px 30px 0 0;
+            width: 30px;
+            height: 30px;
+            padding: 5px;
+            border-radius: 3px;
+        }
+
+        .price>a>img:hover {
+            background-color: #e4a101;
+            transition: all 0.3s ease;
+        }
+
+        .latest_news {
+            width: 1260px;
+            height: 800px;
+            margin: 0 auto;
+        }
+
+        .latest_news>h3 {
+            text-align: center;
+            font-size: 28px;
+            color: #000;
+            margin: 130px 0 0 0;
+        }
+
+        .latest_news>h3>span {
+            color: #e4a101;
+            font-size: 28px;
+        }
+
+        .latest_news>p {
+            text-align: center;
+            color: #494b4f;
+        }
+
+        .latest_news>img[alt="title_bar2"] {
+            width: 268px;
+            height: 11px;
+            margin: 0 0 0 500px;
+        }
+
+        .shooting_game {
+            width: 1260px;
+            height: 520px;
+            display: inline-flex;
+            margin: 50px 0 0 0;
+        }
+
+        .shooting_box {
+            width: 380px;
+            height: 550px;
+            margin: 10px 20px 0 20px;
+        }
+
+        .game_name {
+            width: 380px;
+            height: 50px;
+        }
+
+        .game_name>h3>a {
+            text-decoration: none;
+            color: #000;
+            text-align: left;
+        }
+
+        .game_name>h3>a:hover {
+            color: #e4a101;
+            transition: all 0.5s ease;
+        }
+
+        .index {
+            width: 380px;
+            height: 50px;
+        }
+
+        .index>ul>li {
+            display: inline;
+            color: #494b4f;
+            font-size: 12px;
+        }
+
+        .index>ul>li>a {
+            text-decoration: none;
+            color: #494b4f;
+            font-size: 12px;
+        }
+
+        .index>ul>li>img {
+            width: 12px;
+            height: 12px;
+        }
+
+        .slash {
+            color: #000;
+        }
+
+        .description {
+            width: 380px;
+            height: 120px;
+        }
+
+        .description>p {
+            color: #494b4f;
+            font-size: 15px;
+        }
+
+        footer {
+            width: 100%;
+            height: 550px;
+            position: relative;
+        }
+
+        footer>img[alt="footer_bg"] {
+            width: 100%;
+            height: 100%;
+        }
+
+        footer>img[alt="footer_fire_left"] {
+            position: absolute;
+            left: 40px;
+            bottom: 0;
+        }
+
+        footer>img[alt="footer_fire_right"] {
+            position: absolute;
+            right: 40px;
+            bottom: 0;
+        }
+
+        .footer_box {
+            width: 1260px;
+            height: 330px;
+            position: absolute;
+            top: 150px;
+            left: 50%;
+            transform: translate(-50%, 0%);
+        }
+
+        .geco {
+            width: 330px;
+            height: 330px;
+            float: left;
+            margin: 0 0 0 50px;
+        }
+
+        .geco>p {
+            color: #90949c;
+            font-size: 14px;
+        }
+
+        .gecobox {
+            width: 330px;
+            height: 75px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .gecobox>p {
+            font-size: 14px;
+            color: #90949c;
+            display: inline;
+        }
+
+        .gecobox>img[alt="map"] {
+            width: 10px;
+            height: 15px;
+            display: inline;
+        }
+
+        .gecobox>img[alt="headset"] {
+            width: 15px;
+            height: 15px;
+            display: inline;
+        }
+
+        .gecobox>img[alt="mail"] {
+            width: 15px;
+            height: 10px;
+            display: inline;
+        }
+
+        .products {
+            width: 250px;
+            height: 330px;
+            display: inline;
+            float: left;
+        }
+
+        .products>h2 {
+            color: #fff;
+            font-size: 16px;
+            margin: 10px 20px;
+            border-bottom: 3px solid #e4a101;
+        }
+
+        .products>h3 {
+            font-size: 14px;
+            margin: 30px 20px;
+        }
+
+        .products>h3>a {
+            color: #90949c;
+            text-decoration: none;
+            font-weight: lighter;
+        }
+
+        .help {
+            width: 250px;
+            height: 330px;
+            display: inline;
+            float: left;
+        }
+
+        .help>h2 {
+            color: #fff;
+            font-size: 16px;
+            margin: 10px 20px;
+            border-bottom: 3px solid #e4a101;
+        }
+
+        .help>h3 {
+            font-size: 14px;
+            margin: 30px 20px;
+        }
+
+        .help>h3>a {
+            color: #90949c;
+            text-decoration: none;
+            font-weight: lighter;
+        }
+
+        .follow {
+            width: 330px;
+            height: 165px;
+            background-color: steelblue;
+            display: inline;
+            float: left;
+        }
+
+        .follow>h2 {
+            color: #fff;
+            font-size: 16px;
+            margin: 10px 20px;
+            border-bottom: 3px solid #e4a101;
+        }
+
+        #sns_icon {
+            width: 300px;
+            height: 100px;
+            display: inline-flex;
+            background-color: violet;
+            justify-content: flex-start;
+        }
+
+        #sns_icon>a>img {
+            width: 30px;
+            height: 30px;
+            margin: 5px;
+        }
+
+        .newsletter {
+            width: 330px;
+            height: 165px;
+            background-color: slateblue;
+            display: inline;
+            float: left;
+        }
+
+        .newsletter>h2 {
+            color: #fff;
+            font-size: 16px;
+            margin: 10px 20px;
+            border-bottom: 3px solid #e4a101;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="preview_header">
+        <img src="img/slider_bg02.jpg" alt="slider_bg">
+        <img src="img/slider_circle.png" alt="circle">
+        <img src="img/slider_img02.png" alt="slider_w">
+        <img src="img/background-img.png" alt="slider_m">
+
+        <header>
+            <img src="img/header_bg.jpg" alt="header_bg">
+
+            <div class="logo">
+                <a href="#"><img src="img/logo.png"></a>
+            </div>
+
+            <div class="nav">
+
+                <ul>
+                    <li class="navbox"><a href="#">HOME</a></li>
+                    <li class="navbox"><a href="#">PAGES</a></li>
+                    <li class="navbox"><a href="#">OVERVIEW</a></li>
+                    <li class="navbox"><a href="#">COMMUNITY</a></li>
+                    <li class="navbox"><a href="#">STORE</a></li>
+                    <li class="navbox"><a href="#">BLOG</a></li>
+                    <li class="navbox"><a href="#">CONTACT</a></li>
+                </ul>
+
+            </div>
+
+            <div class="icon_box">
+                <a href="#"><img src="img/icon_cart.png" alt="cart"></a>
+                <a href="#"><img src="img/icon_magnifying_glass.png" alt="magnifying_glass"></a>
+            </div>
+
+            <div class="worldgaming">
+                <h3>world gaming</h3>
+                <h5>Create <span>Modern</span><br>Warfare</h5>
+                <p>Find technology or people for digital progects in public sector and<br>find an individual specialist
+                    develope researcher.</p>
+
+                <button><a href="#">READ MORE</a></button>
+            </div>
+
+        </header>
+
+    </div>
+
+    <section>
+        <div class="released_games">
+            <h3>RELEASED <span>GAMES</span></h3>
+            <p>Compete with 100 players on a remote island for winner takes showdown<br> known issue where certain skin
+                strategic</p>
+            <img src="img/title_bar02.png" alt="title_bar">
+
+            <div class="released_box">
+
+                <div class="callofduty">
+
+                    <a href="#"><img src="img/released_game_img01.jpg" alt="released_img1"></a>
+
+                    <div class="cot_box">
+                        <h3>Rating : </h3><img src="img/icon_5stars.png" alt="5stars">
+                    </div>
+
+                    <div class="cot_box">
+                        <img src="img/released_game_brush.png" alt="name_index">
+                        <h2><span>Call</span> of Duty</h2>
+                    </div>
+
+                    <div class="cot_box">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td class="table_name">Category:</td>
+                                    <td class="table_section">Virtual Game</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="table_name">Model:</td>
+                                    <td class="table_section">Compete 100 players</td>
+                                </tr>
+
+                                <tr>
+                                    <td class="table_name">Controller:</td>
+                                    <td class="table_section">Playstation 5, Bbox, PS4</td>
+                                </tr>
+                            </thead>
+                        </table>
+                        <p>Compete with 100 players ana remote thars island for winner takes showdown known issue</p>
+                        <button>BUY NOW</button>
+                    </div>
+
+                </div>
+
+                <div class="duty_box">
+
+                    <a href="#"><img src="img/release_game_nav01.jpg" alt="nav1"></a>
+
+                </div>
+
+                <div class="duty_box">
+
+                    <a href="#"><img src="img/release_game_nav02.jpg" alt="nav2"></a>
+
+                </div>
+
+                <div class="duty_box">
+
+                    <a href="#"><img src="img/release_game_nav03.jpg" alt="nav3"></a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="for_gamers">
+            <img src="img/just_gamer_bg.jpg" alt="just_gamer_bg">
+
+            <div id="tech">
+                <img src="img/just_gamers_img.png" alt="just_gamer_img">
+                <img src="img/just_gamers_chart.png" alt="just_gamer_chart">
+                <img src="img/gamers_circle_line.png" alt="just_gamer_circle">
+                <img src="img/gamers_circle_shape.png" alt="just_gamer_shape">
+
+                <h3>JUST FOR <span>GAMERS</span></h3>
+                <p>Compete with 100 player on a remote island for winner known<br>issue where certain strategic</p>
+                <img src="img/title_bar03.png" alt="titlebar3">
+
+                <div class="gamer_list">
+
+                    <div class="list_box">
+                        <img src="img/gamer_list_icon_bg.jpg" alt="iconbg">
+                        <img src="img/gamer_list_icon01.png" alt="gamericon1">
+                    </div>
+                    <div class="hgamer">
+                        <h3>VR Development</h3>
+                        <p>See how well critics rating new video game<br>release with 100 players</p>
+                    </div>
+
+                </div>
+
+                <div class="gamer_list">
+
+                    <div class="list_box">
+
+                        <img src="img/gamer_list_icon_bg.jpg" alt="iconbg">
+                        <img src="img/gamer_list_icon02.png" alt="gamericon2">
+                    </div>
+
+                    <div class="hgamer">
+                        <h3>Design & Strategy</h3>
+                        <p>Village and the subline of her own road, the<br>Line Lane. Pityful a rethoric question</p>
+                    </div>
+
+                </div>
+
+                <div class="gamer_list">
+
+                    <div class="list_box">
+                        <img src="img/gamer_list_icon_bg.jpg" alt="iconbg">
+                        <img src="img/gamer_list_icon03.png" alt="gamericon3">
+                    </div>
+
+                    <div class="hgamer">
+                        <h3>Jungle Pharaoh</h3>
+                        <p>Village and the subline of her own road, the<br>Line Lane. Pityful a rethoric question</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="just_games">
+            <h3>JUST FEATURED <span>GAMES</span></h3>
+            <p>Compete with 100 players on a remote island for winner takes showdown<br> known issue where certain skin
+                strategic</p>
+            <img src="img/title_bar02.png" alt="title_bar2">
+
+            <div><img src="" alt=""></div>
+            <div><img src="" alt=""></div>
+            <div><img src="" alt=""></div>
+            <div><img src="" alt=""></div>
+            <div><img src="" alt=""></div>
+            <div><img src="" alt=""></div>
+
+        </div>
+
+        <div class="worlds_meet">
+            <img src="img/cta_bg.jpg" alt="cta_bg">
+
+            <div class="meet_real">
+                <img src="img/cta_img.png" alt="cta_img">
+
+                <div class="meet_box">
+                    <img src="img/cta_icon.png" alt="cta_icon">
+                    <h3>WORLDS MEET <span>REAL</span></h3>
+                    <p>Compete with 100 player on a remote island for winner known<br>issue where certain strategic</p>
+                    <img src="img/title_bar03.png" alt="titlebar3">
+                    <button><a href="#">VIEW SCHEDULE</a></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="gaming_products">
+
+            <div class="products_items">
+                <h3>GAMING PRODUCTS <span>CORNER</span></h3>
+                <p>Compete with 100 players on a remote island for winner takes showdown<br> known issue where certain
+                    skin strategic</p>
+                <img src="img/title_bar03.png" alt="title_bar3">
+
+                <div class="goods">
+                    <img src="img/s_product_img01.jpg" alt="product1">
+                    <button><a href="#">T-SHIRT</a></button>
+                    <div class="goods_naming">
+                        <h3><a href="#">Women Black T-shirt</a></h3>
+
+                        <div class="price">
+                            <h4>$29.00</h4>
+                            <a href="#"><img src="img/icon_cart.png" alt="cart"></a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="goods">
+                    <img src="img/s_product_img02.jpg" alt="product2">
+                    <button><a href="#">X-BOX</a></button>
+                    <div class="goods_naming">
+                        <h3><a href="#">Gears 5 XBOX Controller</a></h3>
+
+                        <div class="price">
+                            <h4>$29.00</h4>
+                            <a href="#"><img src="img/icon_cart.png" alt="cart"></a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="goods">
+                    <img src="img/s_product_img03.jpg" alt="product3">
+                    <button><a href="#">GRAPHICS</a></button>
+                    <div class="goods_naming">
+                        <h3><a href="#">GeForce RTX 2070</a></h3>
+
+                        <div class="price">
+                            <h4>$29.00</h4>
+                            <a href="#"><img src="img/icon_cart.png" alt="cart"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="goods">
+                    <img src="img/s_product_img04.jpg" alt="product4">
+                    <button><a href="#">VR-BOX</a></button>
+                    <div class="goods_naming">
+                        <h3><a href="#">Virtual Reality Smiled</a></h3>
+
+                        <div class="price">
+                            <h4>$29.00</h4>
+                            <a href="#"><img src="img/icon_cart.png" alt="cart"></a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="latest_news">
+            <h3>LATEST NEWS <span>ARTICLE</span></h3>
+            <p>Compete with 100 players on a remote island for winner takes showdown<br>known issue where certain skin
+                strategic</p>
+            <img src="img/title_bar02.png" alt="title_bar2">
+
+            <div class="shooting_game">
+                <div class="shooting_box">
+                    <a href="#"><img src="img/s_blog_thumb01.jpg" alt="blog1"></a>
+
+                    <div class="game_name">
+                        <h3><a href="#">SHOOTER ACTION VIDEO GAME</a></h3>
+                    </div>
+                    <div class="index">
+                        <ul>
+                            <li><img src="img/icon_watch.png" alt="watch"></li>
+                            <li>July 4, 2022</li>
+                            <li class="slash">/</li>
+                            <li><img src="img/icon_tag.png" alt="index"></li>
+                            <li><a href="#">Shooter</a></li>
+                        </ul>
+                    </div>
+                    <div class="description">
+                        <p>Compete with 100 players on a remote island<br>for winner takes showdown known for issue
+                            where certain skin strategic [...]</p>
+                    </div>
+
+                </div>
+
+                <div class="shooting_box">
+                    <a href="#"><img src="img/s_blog_thumb02.jpg" alt="blog2"></a>
+                    <div class="game_name">
+                        <h3><a href="#">MULTIPLAYER ENVIRONMENTS</a></h3>
+                    </div>
+                    <div class="index">
+                        <ul>
+                            <li><img src="img/icon_watch.png" alt="watch"></li>
+                            <li>July 4, 2022</li>
+                            <li class="slash">/</li>
+                            <li><img src="img/icon_tag.png" alt="index"></li>
+                            <li><a href="#">Shooter</a></li>
+                        </ul>
+                    </div>
+                    <div class="description">
+                        <p>Compete with 100 players on a remote island<br>for winner takes showdown known for issue
+                            where certain skin strategic [...]</p>
+                    </div>
+                </div>
+
+                <div class="shooting_box">
+                    <a href="#"><img src="img/s_blog_thumb03.jpg" alt="blog3"></a>
+                    <div class="game_name">
+                        <h3><a href="#">BULLET FORCE MULTIPLAYER</a></h3>
+                    </div>
+                    <div class="index">
+                        <ul>
+                            <li><img src="img/icon_watch.png" alt="watch"></li>
+                            <li>July 4, 2022</li>
+                            <li class="slash">/</li>
+                            <li><img src="img/icon_tag.png" alt="index"></li>
+                            <li><a href="#">Shooter</a></li>
+                        </ul>
+                    </div>
+                    <div class="description">
+                        <p>Compete with 100 players on a remote island<br>for winner takes showdown known for issue
+                            where certain skin strategic [...]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+
+        <img src="img/footer_bg.jpg" alt="footer_bg">
+
+        <img src="img/footer_fire.png" alt="footer_fire_left">
+        <img src="img/footer_fire.png" alt="footer_fire_right">
+
+        <div class="footer_box">
+            <div class="geco">
+                <a href="#"><img src="img/logo.png" alt="logo"></a>
+                <p>Gemas marketplace the release etras<br> thats sheets conting passag.</p>
+
+                <div class="gecobox">
+                    <img src="img/map.png" alt="map">
+                    <p>Address : PO Box W75 Street lan West new queens</p>
+                </div>
+
+                <div class="gecobox">
+                    <img src="img/headset.png" alt="headset">
+                    <p>Phone : +24 1245 654 235</p>
+                </div>
+
+                <div class="gecobox">
+                    <img src="img/mail.png" alt="mail">
+                    <p>Email : info@exemple.com</p>
+                </div>
+            </div>
+
+            <div class="products">
+                <h2>Products</h2>
+
+                <h3><a href="#">Graphics (26)</a></h3>
+                <h3><a href="#">Backgrounds (11)</a></h3>
+                <h3><a href="#">Fonts (9)</a></h3>
+                <h3><a href="#">Music (3)</a></h3>
+                <h3><a href="#">Photography (3)</a></h3>
+
+            </div>
+
+            <div class="help">
+                <h2>Need Help?</h2>
+
+                <h3><a href="#">Terms & Conditions</a></h3>
+                <h3><a href="#">Privacy Policy</a></h3>
+                <h3><a href="#">Refund Policy</a></h3>
+                <h3><a href="#">Affiliate</a></h3>
+                <h3><a href="#">FAQUse Cases</a></h3>
+            </div>
+
+            <div class="follow">
+                <h2>Follow us</h2>
+
+                <div id="sns_icon">
+                    <a href="#"><img src="img/facebook.png" alt="facebook"></a>
+                    <a href="#"><img src="img/twitter-logo-2429.png" alt="twitter"></a>
+                    <a href="#"><img src="img/instagram.icon.webp" alt="instagram"></a>
+                    <a href="#"><img src="img/pinterest.png" alt="pinterest"></a>
+                </div>
+            </div>
+
+            <div class="newsletter">
+                <h2>Newsletter Sign Up</h2>
+                <label for="mail">메일 주소</label>
+                <input type="email" id="mail">
+            </div>
+
+        </div>
+
+    </footer>
+</body>
+
+</html>
